@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // маленькая заготовочка которая потом будет фулл переделана. нужна для смены сцен при нажатии батанов.
     public void OpenLVLMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
