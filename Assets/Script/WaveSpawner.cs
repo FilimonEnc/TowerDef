@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
-        for (int i =0; i< waveNumber; i++)
+        for (int i = 0; i < waveNumber; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(SecondsSpawn);
