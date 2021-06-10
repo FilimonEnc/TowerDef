@@ -3,15 +3,17 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
+    
+    
     public Color hoverColor;
-
-    private GameObject turret;
     public Vector3 positionOffSet;
+    [Header("Optional")]
+    public GameObject turret;
 
     private Renderer rend;
 
     private Color startColor;
-
+    
 
     BuildManager buildManager;
     private void Start()
@@ -21,19 +23,28 @@ public class Node : MonoBehaviour
 
         buildManager = BuildManager.instance;
     }
+
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffSet;
+    }
+
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+
+        if (!buildManager.CanBuild)
+            return;
+
         if (turret != null)
         {
             Debug.Log("Нельзя ставить");
             return;
         }
 
-        //ставить туррели
-        GameObject turretToBuild = buildManager.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffSet, transform.rotation);
+        
+        buildManager.BuildTurretOn(this);
 
 
     }
@@ -41,18 +52,18 @@ public class Node : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (buildManager.GetTurretToBuild() == null)
+        if (!buildManager.CanBuild)
             return;
 
         rend.material.color = hoverColor;
-        Debug.Log("Навел");
+        
     }
     
     
     public void OnMouseExit()
     {
         rend.material.color = startColor;
-        Debug.Log("убрал");
+       
     }
 
 }

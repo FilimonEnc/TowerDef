@@ -4,25 +4,32 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
 
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint anotherTurret;
+
     BuildManager buildManager;
+
+
     private void Start()
     {
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseStandardTurret()
+    public void SelectStandardTurret()
     {
         Debug.Log("Обычная турель поставлена");
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        buildManager.SelectTurretToBuild(standardTurret);
     }
-    public void PurchaseBigBob()
+    public void SelectBigBob()
     {
         Debug.Log("Большой боб");
-        buildManager.SetTurretToBuild(buildManager.AnotherdTurrelPrefab);
+        buildManager.SelectTurretToBuild(anotherTurret);
     }
-    public void PurchasePiuPiu()
-    {
-        Debug.Log("Пиупиу");
-        buildManager.SetTurretToBuild(buildManager.AnotherdTurrelPrefab);
-    }
+
+
+    //public void SelectPiuPiu()
+    //{
+    //    Debug.Log("Пиупиу");
+    //    buildManager.SetTurretToBuild(buildManager.AnotherdTurrelPrefab);
+    //}
 }

@@ -6,33 +6,44 @@ public class BuildManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance!=null)
+        if (instance != null)
         {
             Debug.LogError("More than one buildmanager на сцене");
         }
         instance = this;
-        
+
     }
 
 
     public GameObject standardTurretPrefab;
-
-
     public GameObject AnotherdTurrelPrefab;
 
-    private GameObject turretToBuild;
+    public TurretBlueprint turretToBuild;
+
+    public bool CanBuild { get { return turretToBuild != null; } }
 
 
 
-    public GameObject GetTurretToBuild()
+
+
+    public void BuildTurretOn(Node node)
     {
-
-
-        return turretToBuild;
+        if (PlayerStats.Money < turretToBuild.cost)
+        {
+            Debug.Log("Бомж");
+        }
+        else
+        {
+            PlayerStats.Money -= turretToBuild.cost;
+            GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+            node.turret = turret;
+            Debug.Log("Дело сделано, осталось грошей:" + PlayerStats.Money);
+        }
     }
-
-    public void SetTurretToBuild (GameObject turret)
+    public void SelectTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
+       
     }
 }
+
