@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    
-    
+
+    public Color notEnoughMoneyColor;
     public Color hoverColor;
     public Vector3 positionOffSet;
     [Header("Optional")]
@@ -51,12 +51,14 @@ public class Node : MonoBehaviour
     public void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())
-            return;
+        {   return;}
         if (!buildManager.CanBuild)
-            return;
+        {  return;}
 
-        rend.material.color = hoverColor;
-        
+        rend.material.color = buildManager.HasMoney ? hoverColor : notEnoughMoneyColor;
+
+
+
     }
     
     

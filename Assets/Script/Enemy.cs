@@ -1,4 +1,5 @@
 
+using Script;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
         // иф для того что бы енеми уничтожался, ретурн, что бы ошибку не выдавало
         if (waypointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
         //увеличение индекса вейпоинта идет, что бы не стоять на месте.
@@ -37,4 +38,11 @@ public class Enemy : MonoBehaviour
             target = Waypoints.points[waypointIndex];
         
     }
+
+    void EndPath()
+    {
+        PlayerStats.Lives --;
+        Destroy(gameObject);
+    }
+        
 }

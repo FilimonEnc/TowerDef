@@ -1,22 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+namespace Script
 {
-    public static int Money;
-    public int startMoney = 300;
-    public Text MoneyHave;
-
-    private void Start()
+    public class PlayerStats : MonoBehaviour
     {
-        Money = startMoney;
-    }
+        public static int Money;
+        public int startMoney = 100;
+        
+        public static int Lives;
+        public int startLives = 20;
 
-    private void Update()
-    {
-        MoneyHave.text = Money.ToString();
-    }
+        private void Start()
+        {
+            Money = startMoney;
+            Lives = startLives;
+        }
+    
+    
 
+    }
 }
