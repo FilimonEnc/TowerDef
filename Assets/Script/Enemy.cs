@@ -1,48 +1,47 @@
 
+using System;
 using Script;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     // переменные. некоторым сразу не даю значение( тем что паблик) что бы в рил тайме менять и подстраивать
+   
+   
+    public float startSpeed = 10f;
+    
+    [HideInInspector]
     public float speed;
-    private Transform target;
-    private int waypointIndex = 0;
+    public int worth = 50;
+    public float health = 100;
+    public GameObject deathEffect;
 
     private void Start()
     {
-        target = Waypoints.points[0];
-
+        speed = startSpeed;
     }
-    private void Update()
-    {
-        //тут скорость для энеми короче происходит
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-            GetNextWaypoint();
-
-        
-    }
-    void GetNextWaypoint()
+    public void TakeDamage(float amount)
     {
-        // иф для того что бы енеми уничтожался, ретурн, что бы ошибку не выдавало
-        if (waypointIndex >= Waypoints.points.Length - 1)
+        health -= amount;
+        if (health <= 0)
         {
-            EndPath();
-            return;
+            Die();
         }
-        //увеличение индекса вейпоинта идет, что бы не стоять на месте.
-            waypointIndex++;
-            target = Waypoints.points[waypointIndex];
         
     }
 
-    void EndPath()
+    public void Slow(float pct)
     {
-        PlayerStats.Lives --;
-        Destroy(gameObject);
+        speed = startSpeed * (1f - pct);
     }
+    
+    void Die()
+    { 
+        PlayerStats.Money += worth;
         
+      GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+      Destroy(effect, 5f);
+      Destroy(gameObject);
+    }
 }

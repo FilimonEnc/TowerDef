@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
+    public GameObject gameOverUI;
+    public Animation gameoverAnim;
+    
+    
     // маленькая заготовочка которая потом будет фулл переделана. нужна для смены сцен при нажатии батанов.
     public void OpenLVLMenu()
     {
@@ -39,6 +43,24 @@ public class UiManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void GameOver()
+    {
+        EndGame();
+    }
+    public void EndGame()
+    {
+        GameManager.GameOver = true;
+        gameOverUI.SetActive(true);
+        gameoverAnim.Play();
+        
+      
+    }
+
+    public void NextWave()
+    {
+        WaveSpawner.instance.countdown = 0;
     }
     
 

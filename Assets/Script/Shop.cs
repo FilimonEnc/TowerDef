@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 
     public TurretBlueprint standardTurret;
     public TurretBlueprint anotherTurret;
+    public TurretBlueprint laserTurret;
 
     BuildManager buildManager;
 
@@ -25,11 +26,9 @@ public class Shop : MonoBehaviour
         Debug.Log("Большой боб");
         buildManager.SelectTurretToBuild(anotherTurret);
     }
-
-
-    //public void SelectPiuPiu()
-    //{
-    //    Debug.Log("Пиупиу");
-    //    buildManager.SetTurretToBuild(buildManager.AnotherdTurrelPrefab);
-    //}
+    public void SelectLaserTurret()
+    {
+        Debug.Log("лазер");
+        buildManager.SelectTurretToBuild(laserTurret);
+    }
 }

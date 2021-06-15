@@ -1,6 +1,8 @@
 
+using System;
 using UnityEngine;
 using System.Collections;
+using Script;
 using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
@@ -14,6 +16,14 @@ public class WaveSpawner : MonoBehaviour
     private int waveNumber = 0;
     public float SecondsSpawn = 0.5f;
     public Text WaveCountdownText;
+
+    public static WaveSpawner instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
         if (countdown <= 0f)
@@ -31,6 +41,8 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        PlayerStats.rounds ++;
+        
         for (int i = 0; i < waveNumber; i++)
         {
             SpawnEnemy();

@@ -16,8 +16,6 @@ public class BuildManager : MonoBehaviour
     }
 
 
-    public GameObject standardTurretPrefab;
-    public GameObject AnotherdTurrelPrefab;
 
     public GameObject buildEffect;
     

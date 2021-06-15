@@ -1,15 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Script;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    
+    public GameObject gameOverUI;
+    public static bool GameOver;
+    public Animation gameoverAnim;
+
+    private void Start()
+    {
+        GameOver = false;
+    }
+
     void Update()
     {
-        if(gameEnded)
+        if(GameOver)
             return;
+        
+      
         
         if (PlayerStats.Lives <= 0)
         {
@@ -17,9 +31,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void EndGame()
+    public void EndGame()
     {
-        gameEnded = true;
-        Debug.Log("Конец игры");
+        GameOver = true;
+        gameoverAnim.Play();
+        gameOverUI.SetActive(true);
     }
 }
