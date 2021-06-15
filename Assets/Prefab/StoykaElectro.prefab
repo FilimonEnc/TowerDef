@@ -191,14 +191,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
-  range: 20
+  range: 30
   fireRate: 1
+  slowPct: 0.5
   useLaser: 1
   lineRenderer: {fileID: 3008267638168405538}
+  damageOverTime: 40
+  impactEffect: {fileID: 8764905059613404235}
   enemyTag: Enemy
   Tower: {fileID: 5610223134319920645}
   turnSpeed: 20
-  impactEffect: {fileID: 8764905059613404235}
   firePoint: {fileID: 7728599637360388491}
 --- !u!120 &3008267638168405538
 LineRenderer:

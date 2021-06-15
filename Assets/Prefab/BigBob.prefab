@@ -45,13 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1df8126e7c70c4ba66c9b3d2883c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 30
+  bulletPrefab: {fileID: 7443967275437251532, guid: e323575e777687140971de8ec059e1fb, type: 3}
+  range: 50
   fireRate: 0.5
-  fireCountdown: 1
+  slowPct: 0.5
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  damageOverTime: 30
+  impactEffect: {fileID: 0}
   enemyTag: Enemy
   Tower: {fileID: 4519114982838644739}
   turnSpeed: 20
-  bulletPrefab: {fileID: 7443967275437251532, guid: e323575e777687140971de8ec059e1fb, type: 3}
   firePoint: {fileID: 4124635761075196006}
 --- !u!1 &4124635761075196001
 GameObject:
