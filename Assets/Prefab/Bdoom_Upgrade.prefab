@@ -165,6 +165,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   damageOverTime: 30
   impactEffect: {fileID: 0}
+  mySourceLaser: {fileID: 0}
   enemyTag: Enemy
   Tower: {fileID: 8239615029204071431}
   turnSpeed: 20
