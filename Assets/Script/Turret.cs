@@ -21,7 +21,7 @@ namespace Script
         public LineRenderer lineRenderer;
         public int damageOverTime = 30;
         public ParticleSystem impactEffect;
-    
+        public AudioSource mySourceLaser;
         [Header("Unity Setup Fields")]
 
         public string enemyTag = "Enemy";
@@ -30,8 +30,8 @@ namespace Script
         
     
         public Transform firePoint;
-    
-
+        public AudioSource mySource;
+        
 
 
         void Start()
@@ -74,9 +74,10 @@ namespace Script
             {
                 if (useLaser)
                 {
-                    if (lineRenderer.enabled)
-                    {
-                        lineRenderer.enabled = false;
+                    {mySourceLaser.Play();
+                        if (lineRenderer.enabled)
+                    
+                            lineRenderer.enabled = false;
                         impactEffect.Stop();
                     }
                         
@@ -87,6 +88,7 @@ namespace Script
             LockOnTarget();
             if (useLaser)
             {
+                
                 Laser();
             }
             else
@@ -111,7 +113,8 @@ namespace Script
         }
 
         void Laser()
-        {
+        { 
+            
           targetEnemy.TakeDamage(damageOverTime* Time.deltaTime);
           targetEnemy.Slow(slowPct);
           
@@ -141,9 +144,11 @@ namespace Script
         }
         void Shoot()
         {
+            mySource.Play();
+            
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+            
             if (bullet != null)
                 bullet.Seek(target);
         }

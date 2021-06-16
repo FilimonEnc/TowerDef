@@ -60,7 +60,8 @@ public class UiManager : MonoBehaviour
 
     public void NextWave()
     {
-        WaveSpawner.instance.countdown = 0;
+        if(WaveSpawner.instance.countdown !=0)
+            WaveSpawner.instance.countdown = 0.1f;
     }
     
 

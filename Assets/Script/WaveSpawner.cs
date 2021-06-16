@@ -3,10 +3,14 @@ using System;
 using UnityEngine;
 using System.Collections;
 using Script;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
+
+    public AudioSource mySource;
+    public static int enemyLive = 0;
     public Transform enemyPrefab;
 
     public Transform spawnPoint;
@@ -19,6 +23,8 @@ public class WaveSpawner : MonoBehaviour
 
     public static WaveSpawner instance;
 
+  
+
     private void Awake()
     {
         instance = this;
@@ -26,10 +32,17 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        
+        if (enemyLive > 0)
+        {
+            return;
+        }
+        
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            return;
 
         }
         countdown -= Time.deltaTime;
@@ -40,21 +53,25 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        waveNumber++;
-        PlayerStats.rounds ++;
-        
+      waveNumber++;
+      PlayerStats.rounds++;
         for (int i = 0; i < waveNumber; i++)
         {
+            mySource.Play();
             SpawnEnemy();
             yield return new WaitForSeconds(SecondsSpawn);
+            
         }
 
-        waveNumber++;
+        
     }
     void SpawnEnemy()
     {
+        enemyLive++;
+        
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 
+    
 
 }
