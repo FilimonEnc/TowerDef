@@ -17,12 +17,13 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 1;
     public float countdown = 2f;
-    private int waveNumber = 0;
+    public int waveNumber = 0;
     public float SecondsSpawn = 0.5f;
     public Text WaveCountdownText;
 
     public static WaveSpawner instance;
-
+    
+    
   
 
     private void Awake()

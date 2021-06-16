@@ -1771,6 +1771,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bdoom
       objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -61.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7086679
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70554227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802507590276777311, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 89.747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c210122b653730347a1f81f23dbb1ebc, type: 3}
 --- !u!4 &916029729 stripped
@@ -2745,9 +2769,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2a2e4d906248fbe4bab17189fca0abbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.439
+  m_Volume: 0.187
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4358,7 +4382,7 @@ PrefabInstance:
       objectReference: {fileID: 295873500}
     - target: {fileID: 825386616835702526, guid: 4a6c84208a92dab4398ecc8d1bb461f5, type: 3}
       propertyPath: startMoney
-      value: 150
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 825386616835702527, guid: 4a6c84208a92dab4398ecc8d1bb461f5, type: 3}
       propertyPath: nodeUI

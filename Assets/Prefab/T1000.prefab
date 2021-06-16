@@ -127,9 +127,9 @@ MonoBehaviour:
   mySource: {fileID: -4738378613313842083}
   startSpeed: 10
   speed: 10
-  worth: 50
-  startHealth: 105
-  health: 70
+  worth: 25
+  startHealth: 95
+  health: 100
   deathEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   healthBar: {fileID: 6823458177450842848}
 --- !u!114 &6498070341509745045

@@ -22,8 +22,24 @@ public class Enemy : MonoBehaviour
     public Image healthBar;
     private void Start()
     {
-        health = startHealth;
-        speed = startSpeed;
+        if (WaveSpawner.instance.waveNumber <= 9)
+        {
+            health = (startHealth + WaveSpawner.instance.waveNumber * 2);
+        }
+        else
+        {
+            if ((WaveSpawner.instance.waveNumber >= 9) && (WaveSpawner.instance.waveNumber <= 25))
+            {
+                health = (startHealth + WaveSpawner.instance.waveNumber * 3);
+            }
+            else
+            {
+                health = (startHealth + WaveSpawner.instance.waveNumber * 8);
+                speed = startSpeed;
+            }
+        }
+        
+
     }
 
     public void TakeDamage(float amount)
