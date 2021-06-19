@@ -504,6 +504,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverlayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4118598123767784250, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118598123767784250, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118598123767784250, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2340
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118598123767784250, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 4118598123767784252, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -604,6 +620,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4118598124173318739, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.2592773
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118598124173318739, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.1782227
+      objectReference: {fileID: 0}
     - target: {fileID: 4118598124173318743, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
       propertyPath: laserTurret.sellCost
       value: 150
@@ -640,6 +664,14 @@ PrefabInstance:
       propertyPath: standardTurret.upgradedPrefab
       value: 
       objectReference: {fileID: 8724368142897114813, guid: 0b28bc39aa50f46458bea2dd6b11d0e7, type: 3}
+    - target: {fileID: 4118598124347918355, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465.65485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118598124393735195, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 313
+      objectReference: {fileID: 0}
     - target: {fileID: 8210378903688598452, guid: 52c885f24430d0044bc5828d6f68ab73, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1440,6 +1472,7 @@ GameObject:
   - component: {fileID: 724755898}
   - component: {fileID: 724755897}
   - component: {fileID: 724755896}
+  - component: {fileID: 724755899}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1512,6 +1545,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &724755899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724755895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0554d00f205cfe4db2070cc27cf2206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultResolution: {x: 720, y: 1280}
+  WidthOrHeight: 0.5
 --- !u!4 &751012466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896856915166950796, guid: 5dd896741eba39e4b8ac145fcc7c9505, type: 3}
