@@ -23,18 +23,7 @@ public class UiManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
-    public void OpenLVL3()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
-    }
-    public void OpenLVL4()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
-    }
-    public void OpenLVL5()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
-    }
+   
     public void BackMainMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
